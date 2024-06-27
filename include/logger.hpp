@@ -50,7 +50,7 @@ class Logger {
         void Header (const std::string identifier = GetCurrentTime () );
         void Footer ();
         void Log (const int severity, const std::string module, const int code, bool uFlag = false, 
-                  const std::stringstream optional = std::stringstream ());
+                  const std::stringstream& optional = std::stringstream ());
 };
 
 #endif

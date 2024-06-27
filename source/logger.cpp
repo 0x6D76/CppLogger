@@ -9,6 +9,8 @@
  *           class Logger
  *              Logger ()
  *              Header ()
+ *              Footer ()
+ *              Log ()
  * 
  * Author: 0x6D76
  * Copyright (c) 2024 0x6D76 (0x6D76@proton.me)
@@ -100,7 +102,7 @@ void Logger::Footer () {
  * written to the log file, the instance is initated with.
  */
 void Logger::Log (const int severity, const std::string module, const int code, bool uFlag, 
-                  const std::stringstream optional) {
+                  const std::stringstream& optional) {
 
     std::string color;
     std::string strType;
