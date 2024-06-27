@@ -30,7 +30,7 @@ enum ReturnCodes {
 
 /* Return Messages */
 static std::map <ReturnCodes, std::string> ReturnMessages = {
-    {INIT_FAIL, "Initialization has failed."},
-    {INIT_PASS, "Initialization completed."},
+    {INIT_FAIL, "Initialization has failed. "},
+    {INIT_PASS, "Initialization completed. "},
 };
 #endif

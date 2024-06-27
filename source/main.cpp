@@ -11,6 +11,12 @@
 #include "logger.hpp"
 
 int main () {
-    std::cout << GetReturnMessage (INIT_FAIL) << std::endl;
-    std::cout << GetReturnMessage (INIT_PASS) << std::endl;
+    std::stringstream opt {};
+    opt << "This is an optional message.";
+    Logger l ("temp.log", false);
+    l.Header ();
+    l.Log (PASS, MOD_INIT, INIT_PASS, true);
+    l.Log (FAIL, MOD_INIT, INIT_FAIL, true);
+    l.Log (INFO, MOD_CLEAN, INIT_PASS, true);
+    l.Footer ();
 }
