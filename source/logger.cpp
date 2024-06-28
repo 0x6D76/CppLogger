@@ -19,6 +19,7 @@
 #include "logger.hpp"
 #include "tool.hpp"
 
+
 /*
  * This function enumerates the ReturnMessages map structure and returns the message mapped to the given return code.
  * :arg: returnCode, ReturnCodes value indicating the integer value for the message to be fetched.
@@ -42,6 +43,26 @@ const std::string GetCurrentTime () {
     strftime (timeStamp, sizeof (timeStamp), "[%d-%m-%y %H:%M:%S]", localtime (&now));
     return (timeStamp);
 } /* End of GetCurrentTime () */
+
+
+/*
+ *
+ */
+const int InitializeDirectories (const std::vector <std::string>& dirs) {
+
+    for (const auto &dir : dirs) {
+        try {
+            if (std::filesystem::exists (dir)) {
+                std::cout << "Dir " << dir << " already exists.\n";
+            } else if (std::filesystem::create_directory (dir)) {
+                std::cout << "Dir " << dir << " created.\n";
+            }
+        } catch (const std::filesystem::filesystem_error &error) {
+            std::cout << "Dir " << dir << " creation failed. Error: " << error.what () << std::endl;
+        }
+    }
+    return 1;
+} /* End of InitializeDirectories */
 
 
 /*
@@ -70,6 +91,7 @@ void Logger::Header (const std::string identifier) {
     padding = (WIDTH - head.length ()) / 2;
     opHeader << LINE << "\n" << CYN << std::setw (padding + head.length ()) << head << RST << "\n" 
              << LINE << std::endl;
+
     flHeader << LINE << "\n" << std::setw (padding + identifier.length ()) << identifier << "\n" << LINE << std::endl;
     std::cout << opHeader.str ();
     logFile.open (fileName, std::ios::app);

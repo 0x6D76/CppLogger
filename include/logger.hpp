@@ -11,10 +11,12 @@
 #ifndef CPPLOGGER_LOGGER_HPP
 #define CPPLOGGER_LOGGER_HPP
 #include <ctime>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
 #include "tool.hpp"
 
 /* Constant Declarations */
@@ -39,6 +41,7 @@ const std::string LINE = "======================================================
 /* Function Declarations */
 const std::string GetReturnMessage (ReturnCodes code);
 const std::string GetCurrentTime ();
+const int InitializeDirectories (const std::vector <std::string>& dirs);
 
 /* Logger class */
 class Logger {
@@ -47,7 +50,7 @@ class Logger {
         bool verbose;
     public:
         Logger (std::string nameFile, bool verbose = false);
-        void Header (const std::string identifier = GetCurrentTime () );
+        void Header (const std::string identifier = GetCurrentTime ());
         void Footer ();
         void Log (const int severity, const std::string module, const int code, bool uFlag = false, 
                   const std::stringstream& optional = std::stringstream ());

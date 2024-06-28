@@ -25,7 +25,7 @@ const std::string MOD_CLEAN = "Clean-up";
 /* Return Codes */
 enum ReturnCodes {
     INIT_FAIL = -1,
-    INIT_PASS =  2,
+    INIT_PASS =  1,
 };
 
 /* Return Messages */

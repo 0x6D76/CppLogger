@@ -33,3 +33,4 @@
 *.app
 *.dSYM
 main
+temp_main.cpp
