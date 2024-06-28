@@ -41,7 +41,7 @@ const std::string LINE = "======================================================
 /* Function Declarations */
 const std::string GetReturnMessage (ReturnCodes code);
 const std::string GetCurrentTime ();
-const int InitializeDirectories (const std::vector <std::string>& dirs);
+void InitializeDirectories (const std::vector <std::string>& dirs);
 
 /* Logger class */
 class Logger {

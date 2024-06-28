@@ -6,6 +6,7 @@
  * Functions:
  *           string GetReturnMessage ()
  *           string GetCurrentTime ()
+ *           void InitializeDirectories ()
  *           class Logger
  *              Logger ()
  *              Header ()
@@ -48,7 +49,7 @@ const std::string GetCurrentTime () {
 /*
  *
  */
-const int InitializeDirectories (const std::vector <std::string>& dirs) {
+void InitializeDirectories (const std::vector <std::string>& dirs) {
 
     for (const auto &dir : dirs) {
         try {
@@ -61,7 +62,6 @@ const int InitializeDirectories (const std::vector <std::string>& dirs) {
             std::cout << "Dir " << dir << " creation failed. Error: " << error.what () << std::endl;
         }
     }
-    return 1;
 } /* End of InitializeDirectories */
 
 
