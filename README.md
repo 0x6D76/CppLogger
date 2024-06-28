@@ -12,10 +12,11 @@ To log all the activities to a log file and to (optionally) print the same to th
 
 # Recommended Operations
 <br>
+
 1. Gathering tool name, current version & identifier/tagline from the user
 2. Initializing log file(s)
 3. Formatting header & footer
-4. Color coding based on severities
+4. Color coding log messages based on severities
 5. Mapping codes to log messages
 6. Formatting the log messages
 7. Logging the messages to a log file
